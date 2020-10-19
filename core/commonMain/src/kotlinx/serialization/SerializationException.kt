@@ -62,8 +62,11 @@ public open class SerializationException : IllegalArgumentException {
  * Thrown when [KSerializer] did not receive property from [Decoder], and this property was not optional.
  */
 @PublishedApi
-internal class MissingFieldException(fieldName: String) : // TODO: add (message, cause) ctor after 1.4.20 for coroutines stacktrace recovery
-    SerializationException("Field '$fieldName' is required, but it was missing")
+internal class MissingFieldException : SerializationException {
+    // TODO: add (message, cause) ctor after 1.4.20 for coroutines stacktrace recovery
+    constructor(fieldName: String) : super("Field '$fieldName' is required, but it was missing")
+    constructor(fieldNames: List<String>, serialName: String) : super(if (fieldNames.size == 1) "Field '${fieldNames[0]}' is required for type with serial name '$serialName', but it was missing" else "Fields $fieldNames are required for type with serial name '$serialName', but they were missing")
+}
 
 /**
  * Thrown when [KSerializer] received unknown property index from [CompositeDecoder.decodeElementIndex].
