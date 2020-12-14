@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package kotlinx.serialization.protobuf.generator.scheme;
+option java_package = "api.proto";
+option java_outer_classname = "Outer";
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.OptionsClass
+message OptionsClass {
+  required int32 i = 1;
+}

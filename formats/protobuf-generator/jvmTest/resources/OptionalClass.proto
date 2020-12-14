@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package kotlinx.serialization.protobuf.generator.scheme;
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.OptionalClass
+message OptionalClass {
+  required int32 requiredInt = 1;
+  // WARNING: field 'optionalInt' has default value what not present in scheme
+  optional int32 optionalInt = 2;
+  required int32 nullableInt = 3;
+  // WARNING: field 'nullableOptionalInt' has default value what not present in scheme
+  optional int32 nullableOptionalInt = 4;
+}

@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package kotlinx.serialization.protobuf.generator.scheme;
+
+// serial name: my serial name
+message my_serial_name {
+  required int32 original = 1;
+  required SerialNameEnum enum_field = 2;
+}
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.SerialNameEnum
+enum SerialNameEnum {
+  FIRST = 0;
+  overridden_name_of_enum_ = 1;
+}

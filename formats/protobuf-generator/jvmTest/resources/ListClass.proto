@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package kotlinx.serialization.protobuf.generator.scheme;
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.ListClass
+message ListClass {
+  repeated int32 intList = 1;
+  repeated int32 intArray = 2;
+  repeated int32 boxedIntArray = 3;
+  repeated OptionsClass messageList = 4;
+  repeated SerialNameEnum enumList = 5;
+}
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.OptionsClass
+message OptionsClass {
+  required int32 i = 1;
+}
+
+// serial name: kotlinx.serialization.protobuf.generator.GenerationTest.SerialNameEnum
+enum SerialNameEnum {
+  FIRST = 0;
+  overridden_name_of_enum_ = 1;
+}
